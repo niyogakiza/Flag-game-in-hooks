@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import PropTypes from 'prop-types'
-import { normalise } from './helpers/normalise'
-import { placeholder } from './helpers/placeholder'
-import { Form, Placeholder, HiddenInput } from './styled'
+import { normalise } from '../helpers/normalise'
+import { placeholder } from '../helpers/placeholder'
+import { Form, Placeholder, HiddenInput } from '../styled'
 
-const AnswerInput = ({ answer, onCorrect, onIncorrect, ...props }) => {
+const AnswerInput = ({ answer, onCorrect, onIncorrect }) => {
   const [value, setValue] = useState('')
 
-  useEffect(() => setValue(), [answer])
+  // useEffect(() => setValue(), [answer])
 
   const handleChange = event => {
     setValue(normalise(event.target.value))
